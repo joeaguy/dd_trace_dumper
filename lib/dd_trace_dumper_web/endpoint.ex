@@ -35,7 +35,7 @@ defmodule DdTraceDumperWeb.Endpoint do
   plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
 
   plug Plug.Parsers,
-    parsers: [:urlencoded, :multipart, :json],
+    parsers: [:urlencoded, :multipart, :json, Msgpax.PlugParser],
     pass: ["*/*"],
     json_decoder: Phoenix.json_library()
 

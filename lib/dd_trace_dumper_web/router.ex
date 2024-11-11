@@ -5,7 +5,8 @@ defmodule DdTraceDumperWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", DdTraceDumperWeb do
+  scope "/", DdTraceDumperWeb do
     pipe_through :api
+    match :*,  "/*path", Dumper, :create
   end
 end
